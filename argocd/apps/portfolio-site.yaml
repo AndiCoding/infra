@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portfolio-site
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:AndiCoding/infra.git
+    targetRevision: HEAD
+    path: portfolio-site
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: portfolio-site
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
