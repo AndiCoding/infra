@@ -24,7 +24,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: frontend
-          image: ghcr.io/andicoding/site:78d48529b4431923194fb750c4463ac6b0526486
+          image: ghcr.io/andicoding/site:1e5aa2606592b69f443c8c55f48baed47213cc09
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
